@@ -7915,6 +7915,7 @@ if test "$ac_cv_c_compiler_gnu" = yes; then
          fi
 
 case "$host_os" in
+*linux*)	CFLAGS="$CFLAGS -D_GNU_SOURCE" ;;
 *aix*)		CFLAGS="$CFLAGS -D_ALL_SOURCE" ;;
 *osf*)		CFLAGS="$CFLAGS -D_SOCKADDR_LEN" ;;
 *solaris*)	if test "$ac_cv_c_compiler_gnu" = yes; then
