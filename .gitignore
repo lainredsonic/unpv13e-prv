@@ -1,4 +1,7 @@
 core
 *.o
+*.a
 *.lc
 *.lh
+*.un~
+*.log
