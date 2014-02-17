@@ -3,7 +3,8 @@ include ../Make.defines
 PROGS =	tcpcli01 tcpcli04 tcpcli05 tcpcli06 \
 		tcpcli07 tcpcli08 tcpcli09 tcpcli10 \
 		tcpserv01 tcpserv02 tcpserv03 tcpserv04 \
-		tcpserv08 tcpserv09 tcpservselect01 tcpservpoll01 tsigpipe
+		tcpserv08 tcpserv09 tcpservselect01 tcpservpoll01 tsigpipe \
+		tcpserv02_linux_p111
 
 all:	${PROGS}
 
@@ -39,6 +40,9 @@ tcpserv01:	tcpserv01.o
 
 tcpserv02:	tcpserv02.o sigchldwait.o
 		${CC} ${CFLAGS} -o $@ tcpserv02.o sigchldwait.o ${LIBS}
+tcpserv02_linux_p111:	tcpserv02_linux_p111.o sigchldwait.o
+		${CC} ${CFLAGS} -o $@ tcpserv02_linux_p111.o sigchldwait.o ${LIBS}
+
 
 tcpserv03:	tcpserv03.o sigchldwait.o
 		${CC} ${CFLAGS} -o $@ tcpserv03.o sigchldwait.o ${LIBS}
