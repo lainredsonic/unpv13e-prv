@@ -14,8 +14,10 @@ main(int argc, char **argv)
 		listenfd = Tcp_listen(NULL, argv[1], &addrlen);
 	else if (argc == 3)
 		listenfd = Tcp_listen(argv[1], argv[2], &addrlen);
-	else
+	else {
+		listenfd = -1;
 		err_quit("usage: daytimetcpsrv2 [ <host> ] <service or port>");
+	}
 
 	cliaddr = Malloc(addrlen);
 
