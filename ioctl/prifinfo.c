@@ -6,7 +6,8 @@ main(int argc, char **argv)
 	struct ifi_info	*ifi, *ifihead;
 	struct sockaddr	*sa;
 	u_char			*ptr;
-	int				i, family, doaliases;
+	int				i, doaliases;
+	int	family = AF_INET;
 
 	if (argc != 3)
 		err_quit("usage: prifinfo <inet4|inet6> <doaliases>");

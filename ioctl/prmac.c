@@ -6,7 +6,7 @@ main(int argc, char **argv)
 {
 	int					sockfd;
 	struct ifi_info			*ifi;
-	unsigned char		*ptr;
+	char		*ptr;
 	struct arpreq		arpreq;
 	struct sockaddr_in	*sin;
 

@@ -9,7 +9,8 @@
 int
 main(int argc, char **argv)
 {
-	int					sockfd, len;
+	int					sockfd;
+//	int					len;
 	char				*ptr, buf[2048], addrstr[INET_ADDRSTRLEN];
 	struct ifconf		ifc;
 	struct ifreq		*ifr;
@@ -25,12 +26,13 @@ main(int argc, char **argv)
 
 	for (ptr = buf; ptr < buf + ifc.ifc_len; ) {
 		ifr = (struct ifreq *) ptr;
-		len = sizeof(struct sockaddr);
-#ifdef	HAVE_SOCKADDR_SA_LEN
-		if (ifr->ifr_addr.sa_len > len)
-			len = ifr->ifr_addr.sa_len;		/* length > 16 */
-#endif
-		ptr += sizeof(ifr->ifr_name) + len;	/* for next one in buffer */
+//		len = sizeof(struct sockaddr);
+//#ifdef	HAVE_SOCKADDR_SA_LEN
+//		if (ifr->ifr_addr.sa_len > len)
+//			len = ifr->ifr_addr.sa_len;		/* length > 16 */
+//#endif
+//		ptr += sizeof(ifr->ifr_name) + len;	/* for next one in buffer */
+		ptr += sizeof(struct ifreq);	/* for next one in buffer */
 
 		switch (ifr->ifr_addr.sa_family) {
 		case AF_INET:
