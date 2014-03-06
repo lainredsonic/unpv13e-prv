@@ -1,7 +1,10 @@
 include ../Make.defines
 
+#PROGS =	daytimetcpcli daytimetcpsrv2 mycat openfile \
+#	tfcred01 unixbind unixstrcli01 unixstrserv01 unixstrserv02
+
 PROGS =	daytimetcpcli daytimetcpsrv2 mycat openfile \
-	tfcred01 unixbind unixstrcli01 unixstrserv01 unixstrserv02
+	unixbind unixstrcli01 unixstrserv01 unixdgcli01 unixdgserv01
 
 all:	${PROGS}
 
@@ -17,8 +20,8 @@ mycat:		mycat.o myopen.o
 openfile:	openfile.o
 		${CC} ${CFLAGS} -o $@ openfile.o ${LIBS}
 
-tfcred01:	tfcred01.o
-		${CC} ${CFLAGS} -o $@ tfcred01.o ${LIBS}
+#tfcred01:	tfcred01.o
+#		${CC} ${CFLAGS} -o $@ tfcred01.o ${LIBS}
 
 unixbind:	unixbind.o
 		${CC} ${CFLAGS} -o $@ unixbind.o ${LIBS}
@@ -35,8 +38,8 @@ unixstrcli01:	unixstrcli01.o
 unixstrserv01:	unixstrserv01.o sigchldwaitpid.o
 		${CC} ${CFLAGS} -o $@ unixstrserv01.o sigchldwaitpid.o ${LIBS}
 
-unixstrserv02:	unixstrserv02.o strecho.o sigchldwaitpid.o readcred.o
-		${CC} ${CFLAGS} -o $@ unixstrserv02.o strecho.o sigchldwaitpid.o \
+#unixstrserv02:	unixstrserv02.o strecho.o sigchldwaitpid.o readcred.o
+#		${CC} ${CFLAGS} -o $@ unixstrserv02.o strecho.o sigchldwaitpid.o \
 				readcred.o ${LIBS}
 
 clean:

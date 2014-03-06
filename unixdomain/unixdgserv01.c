@@ -16,4 +16,5 @@ main(int argc, char **argv)
 	Bind(sockfd, (SA *) &servaddr, sizeof(servaddr));
 
 	dg_echo(sockfd, (SA *) &cliaddr, sizeof(cliaddr));
+	exit(0);
 }
