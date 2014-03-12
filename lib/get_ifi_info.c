@@ -8,7 +8,7 @@ get_ifi_info(int family, int doaliases)
 	int					sockfd, len, lastlen, flags, myflags, idx = 0, hlen = 0;
 	char				*ptr, *buf, lastname[IFNAMSIZ], *cptr, *haddr, *sdlname;
 	struct ifconf		ifc;
-	struct ifreq		*ifr, ifrcopy;
+	struct ifreq		*ifr, ifrcopy, ifrcopy2;
 	struct sockaddr_in	*sinptr;
 	struct sockaddr_in6	*sin6ptr;
 
@@ -59,6 +59,7 @@ get_ifi_info(int family, int doaliases)
 //		ptr += sizeof(ifr->ifr_name) + len;	/* for next one in buffer */
 		ptr += sizeof(struct ifreq);	/* for next one in buffer */
 
+		ifrcopy2 = *ifr;
 #ifdef	HAVE_SOCKADDR_DL_STRUCT
 		/* assumes that AF_LINK precedes AF_INET or AF_INET6 */
 		if (ifr->ifr_addr.sa_family == AF_LINK) {
@@ -68,6 +69,10 @@ get_ifi_info(int family, int doaliases)
 			haddr = sdl->sdl_data + sdl->sdl_nlen;
 			hlen = sdl->sdl_alen;
 		}
+#else
+		Ioctl(sockfd, SIOCGIFHWADDR, &ifrcopy2);
+		haddr = ifrcopy2.ifr_hwaddr.sa_data;
+		hlen = IFHWADDRLEN;
 #endif
 
 		if (ifr->ifr_addr.sa_family != family)
@@ -105,9 +110,11 @@ get_ifi_info(int family, int doaliases)
 #endif
 		memcpy(ifi->ifi_name, ifr->ifr_name, IFI_NAME);
 		ifi->ifi_name[IFI_NAME-1] = '\0';
+#ifdef	HAVE_SOCKADDR_DL_STRUCT
 		/* If the sockaddr_dl is from a different interface, ignore it */
 		if (sdlname == NULL || strcmp(sdlname, ifr->ifr_name) != 0)
 			idx = hlen = 0;
+#endif
 		ifi->ifi_index = idx;
 		ifi->ifi_hlen = hlen;
 		if (ifi->ifi_hlen > IFI_HADDR)

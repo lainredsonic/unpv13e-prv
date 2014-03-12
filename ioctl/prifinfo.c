@@ -34,13 +34,15 @@ main(int argc, char **argv)
 		if (ifi->ifi_flags & IFF_MULTICAST)		printf("MCAST ");
 		if (ifi->ifi_flags & IFF_LOOPBACK)		printf("LOOP ");
 		if (ifi->ifi_flags & IFF_POINTOPOINT)	printf("P2P ");
+		if (ifi->ifi_myflags && IFI_ALIAS)	printf("ALIAS");
 		printf(">\n");
 /* *INDENT-ON* */
 
 		if ( (i = ifi->ifi_hlen) > 0) {
+			printf("  MAC: ");
 			ptr = ifi->ifi_haddr;
 			do {
-				printf("%s%x", (i == ifi->ifi_hlen) ? "  " : ":", *ptr++);
+				printf("%s%.2x", (i == ifi->ifi_hlen) ? "" : ":", *ptr++);
 			} while (--i > 0);
 			printf("\n");
 		}
