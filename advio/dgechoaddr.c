@@ -3,6 +3,8 @@
 #undef	MAXLINE
 #define	MAXLINE	20		/* to see datagram truncation */
 
+#define IP_RECVIF 1
+
 void
 dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen)
 {
@@ -30,7 +32,7 @@ dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen)
 		flags = 0;
 		n = Recvfrom_flags(sockfd, mesg, MAXLINE, &flags,
 						   pcliaddr, &len, &pktinfo);
-		printf("%d-byte datagram from %s", n, Sock_ntop(pcliaddr, len));
+		printf("%d-byte datagram from %s", (int)n, Sock_ntop(pcliaddr, len));
 		if (memcmp(&pktinfo.ipi_addr, &in_zero, sizeof(in_zero)) != 0)
 			printf(", to %s", Inet_ntop(AF_INET, &pktinfo.ipi_addr,
 										str, sizeof(str)));

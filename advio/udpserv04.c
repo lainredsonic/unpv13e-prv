@@ -13,9 +13,9 @@ main(int argc, char **argv)
 	struct ifi_info		*ifi, *ifihead;
 
 	if (argc == 2)
-		sockfd = Udp_client(NULL, argv[1], (void **) &sa, &salen);
+		sockfd = Udp_client(NULL, argv[1], (struct sockaddr **) &sa, &salen);
 	else if (argc == 3)
-		sockfd = Udp_client(argv[1], argv[2], (void **) &sa, &salen);
+		sockfd = Udp_client(argv[1], argv[2], (struct sockaddr **) &sa, &salen);
 	else
 		err_quit("usage: udpserv04 [ <host> ] <service or port>");
 	family = sa->sa_family;
