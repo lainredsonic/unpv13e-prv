@@ -33,7 +33,7 @@ proc_v6(char *ptr, ssize_t len, struct msghdr *msg, struct timeval* tvrecv)
 			}
 		}
 		printf("%d bytes from %s: seq=%u, hlim=",
-				len, Sock_ntop_host(pr->sarecv, pr->salen),
+				(int)len, Sock_ntop_host(pr->sarecv, pr->salen),
 				icmp6->icmp6_seq);
 		if (hlim == -1)
 			printf("???");	/* ancillary data missing */
@@ -42,7 +42,7 @@ proc_v6(char *ptr, ssize_t len, struct msghdr *msg, struct timeval* tvrecv)
 		printf(", rtt=%.3f ms\n", rtt);
 	} else if (verbose) {
 		printf("  %d bytes from %s: type = %d, code = %d\n",
-				len, Sock_ntop_host(pr->sarecv, pr->salen),
+				(int)len, Sock_ntop_host(pr->sarecv, pr->salen),
 				icmp6->icmp6_type, icmp6->icmp6_code);
 	}
 #endif	/* IPV6 */
