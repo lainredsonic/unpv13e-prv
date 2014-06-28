@@ -1,3 +1,8 @@
+/* @ TCP时间获取客户端程序
+ * @ 使用getsockname显示当前客户端绑定的ip
+ * @ 未记载
+ */
+
 #include	"unp.h"
 
 int

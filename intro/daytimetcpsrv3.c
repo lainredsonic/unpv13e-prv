@@ -1,3 +1,8 @@
+/* @ TCP时间服务器程序
+   @ 收到客户端请求的时候显示客户端ip和端口号
+   @ 与daytimetcpsrv1不同的是监听端口号变更为9999
+   @ 未记载
+ */
 #include	"unp.h"
 #include	<time.h>
 

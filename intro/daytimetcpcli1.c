@@ -1,3 +1,9 @@
+/* @ TCP时间获取客户端程序
+ * @ 显示read系统调用次数
+ * @ 配合daytimetcpsrv1使用
+ * @ 未记载
+ */
+
 #include	"unp.h"
 
 int

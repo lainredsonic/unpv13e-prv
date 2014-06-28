@@ -1,3 +1,8 @@
+/* @ TCP时间服务器程序
+   @ 收到客户端请求的时候显示客户端ip和端口号
+   @ C4-6 P92
+ */
+
 #include	"unp.h"
 #include	<time.h>
 

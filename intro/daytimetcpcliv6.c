@@ -1,3 +1,8 @@
+/* @ TCP时间获取客户端程序v6版
+ * @ 配合daytimetcpsrvv6使用
+ * @ C1-3 P9
+ */
+
 #include	"unp.h"
 
 int

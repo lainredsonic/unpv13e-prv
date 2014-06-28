@@ -1,3 +1,8 @@
+/* @ TCP时间获取服务器程序
+   @ 配合daytimetcpcli使用
+   @ C1-5 P11
+ */
+
 #include	"unp.h"
 #include	<time.h>
 

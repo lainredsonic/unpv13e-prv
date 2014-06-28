@@ -1,3 +1,8 @@
+/* @ TCP时间获取客户端程序
+ * @ 配合daytimetcpsrv使用
+ * @ C1-2 P4
+ */
+
 #include	"unp.h"
 
 int

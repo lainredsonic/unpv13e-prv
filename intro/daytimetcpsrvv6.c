@@ -1,3 +1,9 @@
+/* @ TCP时间获取服务器程序ipv6版本
+   @ 当有客户端连接时会打印客户端的ip
+   @ 配合daytimetcpcliv6使用
+   @ 未记载
+ */
+
 #include	"unp.h"
 #include	<time.h>
 

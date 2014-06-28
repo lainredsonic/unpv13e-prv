@@ -1,3 +1,9 @@
+/* @ TCP时间获取服务器程序
+   @ 发送应答时，将一个缓冲区中的数据依序多次调用write,每次一个字节
+   @ 配合daytimecli2,发现客户端一次收到完整的缓冲区数据，体现了tcp的流特性
+   @ 未记载
+ */
+
 #include	"unp.h"
 #include	<time.h>
 
@@ -26,7 +32,7 @@ main(int argc, char **argv)
         ticks = time(NULL);
         snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
 		for (i = 0; i < strlen(buff); i++)
-        	Write(connfd, &buff[i], 1);
+			Write(connfd, &buff[i], 1);
 
 		Close(connfd);
 	}

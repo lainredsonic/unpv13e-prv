@@ -1,3 +1,10 @@
+/* @ TCP时间获取客户端程序
+ * @ 显示read系统调用次数
+ * @ 配合daytimetcpsrv2,结果显示客户端只read一次就得到了所有数据，体现了TCP的流特性
+ * @ 与daytimetcpcli1不同的是目的端口号为9999
+ * @ 未记载
+ */
+
 #include	"unp.h"
 
 int
