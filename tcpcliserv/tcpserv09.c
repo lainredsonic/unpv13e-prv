@@ -1,3 +1,9 @@
+/* TCP回射服务器程序
+ * str_echo()使用自str_echo09.c
+ * 配合tcpcli09使用
+ * C5-18 P128
+ */
+
 #include	"unp.h"
 
 int

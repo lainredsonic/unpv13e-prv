@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * str_cli()使用自lib/str_cli.c
+ * 配合tcpserv01使用
+ * C5-4 P106
+ */
+
 #include	"unp.h"
 
 int
@@ -17,7 +23,6 @@ main(int argc, char **argv)
 	Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
 	Connect(sockfd, (SA *) &servaddr, sizeof(servaddr));
-
 	str_cli(stdin, sockfd);		/* do it all */
 
 	exit(0);

@@ -1,3 +1,7 @@
+/*  习题5.6
+ *  C5-20 P130
+ */
+
 #include	"unp.h"
 
 void

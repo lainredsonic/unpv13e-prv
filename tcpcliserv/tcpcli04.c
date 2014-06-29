@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * 客户端与服务器建立5个连接,与tcpserv03配套,演示当客户端结束时wait与waitpid的区别
+ * str_cli()使用自lib/str_cli.c
+ * C5-10 P116
+ */
+
 #include	"unp.h"
 
 int

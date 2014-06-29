@@ -1,3 +1,9 @@
+/* TCP回射服务器程序
+ * str_echo()使用自str_echo08.c
+ * 配合tcpcli08使用
+ * 未记载
+ */
+
 #include	"unp.h"
 
 int

@@ -1,3 +1,9 @@
+/* TCP回射服务器程序
+ * 使用了poll机制
+ * 配合tcpcli01使用(tcpcliserv中的客户端程序没有使用半关闭,所以不是配合最好的,具体查看select目录)
+ * C6-11 P158
+ */
+
 /* include fig01 */
 #include	"unp.h"
 //#include	<limits.h>		/* for OPEN_MAX */

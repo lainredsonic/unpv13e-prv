@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * str_cli()使用自str_cli11.c
+ * 向已关闭的连接写入数据,观察到SIGPIPE信号
+ * C5-13 P122
+ */
+
 /* Use standard echo server; baseline measurements for nonblocking version */
 #include	"unp.h"
 

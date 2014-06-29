@@ -1,3 +1,7 @@
+/* TCP回射客户端程序
+ * str_cli()使用自lib/str_cli.c
+ * 未记载
+ */
 /* Test version of client that sends one line without a newline,
    to break tcpservselect01.c */
 

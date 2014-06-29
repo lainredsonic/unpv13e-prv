@@ -1,3 +1,10 @@
+/* TCP回射服务器程序
+ * str_echo()使用自lib/str_echo.c
+ * sig_child()使用自sigchildwait.c
+ * 配合tcpcli01使用,演示当子进程收到SIGCHILD信号时,主进程也因系统调用被打断而意外终止
+ * C5-9 P113
+ */
+
 #include	"unp.h"
 
 int

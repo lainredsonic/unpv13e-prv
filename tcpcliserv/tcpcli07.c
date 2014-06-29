@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * 使用SIG_ALARM信号实现连接超时处理
+ * str_cli()使用自lib/str_cli.c
+ * 未记载
+ */
+
 #include	"unp.h"
 
 int

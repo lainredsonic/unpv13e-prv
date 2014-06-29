@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * str_cli()使用自str_cli08(和lib/str_cli没有区别)
+ * 和tcpcli09不同的是没有使用sum.h传递结构体
+ * 未记载
+ */
+
 #include	"unp.h"
 
 int

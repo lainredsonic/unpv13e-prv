@@ -1,3 +1,9 @@
+/* TCP回射客户端程序
+ * str_cli()使用自lib/str_cli.c
+ * 使用SO_LINGER实现该客户端发出连接后,并在服务器端accept返回前撤掉连接
+ * C5-11 P120
+ */
+
 #include	"unp.h"
 
 int

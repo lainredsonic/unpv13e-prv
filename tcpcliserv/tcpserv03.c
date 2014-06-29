@@ -1,3 +1,11 @@
+/* TCP回射服务器程序
+ * str_echo()使用自lib/str_echo.c
+ * sig_child()使用自sigchildwait.c
+ * 配合tcpcli01使用,改进了tcpserv02的缺陷,主进程系统调用中收到SIGCHILD信号后自动恢复
+ * 配合tcpcli04使用,演示出5个子进程很可能无法都退出的缺陷
+ * C5-9 P115
+ */
+
 #include	"unp.h"
 
 int
