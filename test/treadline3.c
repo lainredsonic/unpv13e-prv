@@ -13,4 +13,5 @@ main(int argc, char **argv)
 	while ( (n = readline_r(&rline)) > 0)
 		count++;
 	printf("%d lines\n", count);
+	return 0;
 }

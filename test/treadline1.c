@@ -10,4 +10,5 @@ main(int argc, char **argv)
 	while ( ( n = readline(STDIN_FILENO, recvline, MAXLINE)) > 0)
 		count++;
 	printf("%d lines\n", count);
+	return 0;
 }

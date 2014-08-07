@@ -58,7 +58,7 @@ sendto_01()
 	 * if we don't specify a destination address.
 	 */
 
-	Sendto(sockfd, "hello", 5, 0, NULL, NULL);
+	Sendto(sockfd, "hello", 5, 0, NULL, 0);
 
 	if ( (n = Recvfrom(sockfd, buff, sizeof(buff), 0, NULL, NULL)) != 5)
 		err_quit("! Recvfrom expected 5");
@@ -69,7 +69,7 @@ sendto_01()
 	 * while Solaris does.
 	 */
 
-	Sendto(sockfd, "world", 5, 0, NULL, NULL);
+	Sendto(sockfd, "world", 5, 0, NULL, 0);
 
 	len = sizeof(servaddr) * 2;	/* that's a lie */
 	if ( (n = Recvfrom(sockfd, buff, sizeof(buff), 0,
@@ -203,4 +203,5 @@ main(int argc, char **argv)
 
 	if (verbose) printf("sendto_01\n");
 	sendto_01();
+	return 0;
 }

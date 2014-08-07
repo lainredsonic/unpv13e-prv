@@ -1,6 +1,29 @@
 #include	"unp.h"
 
-main()
+
+# define __set_errno(val) (errno = (val))
+  
+int
+isfdtype (int fildes, int fdtype)
+{ 
+  struct stat64 st;
+  int result;
+
+  { 
+    int save_error = errno;
+    result = fstat64 (fildes, &st);
+    __set_errno (save_error);
+  }
+
+  return result ?: (st.st_mode & S_IFMT) == (mode_t) fdtype;
+}
+
+int
+Isfdtype(int fildes, int fdtype){
+	return isfdtype(fildes, fdtype);
+}
+
+int main()
 {
 	int	tcpsock, udpsock;
 

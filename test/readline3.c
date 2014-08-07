@@ -59,6 +59,9 @@ readline_r(Rline *rptr)
 }
 /* end readline */
 
+
+/* re-defined in lib/readline.c */
+/*
 ssize_t
 Readline(int fd, void *ptr, size_t maxlen)
 {
@@ -68,3 +71,4 @@ Readline(int fd, void *ptr, size_t maxlen)
 		err_sys("readline error");
 	return(n);
 }
+*/

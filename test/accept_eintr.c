@@ -12,8 +12,8 @@ sig_int(int signo)
 int
 main(int argc, char **argv)
 {
-	int					listenfd, connfd;
-	socklen_t			clilen;
+	int			listenfd;
+	socklen_t		clilen;
 	struct sockaddr_in	cliaddr, servaddr;
 
 	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
@@ -31,7 +31,7 @@ main(int argc, char **argv)
 
 	for ( ; ; ) {
 		clilen = sizeof(cliaddr);
-		connfd = Accept(listenfd, (SA *) &cliaddr, &clilen);
+		Accept(listenfd, (SA *) &cliaddr, &clilen);
 			/* error from Accept() if not restarted */
 	}
 }
