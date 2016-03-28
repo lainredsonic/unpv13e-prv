@@ -1,3 +1,9 @@
+/* 域套接字数据报回射客户端
+ * dg_cli()使用自lib/dg_cli.c
+ * 配合unixdgserv01使用
+ * C15-6 P360
+ */
+
 #include	"unp.h"
 
 int

@@ -1,3 +1,8 @@
+/* 域套接字数据报回射服务器
+ * dg_echo()使用自lib/dg_echo.c
+ * 配合unixdgcli01使用
+ * C15-6 P360
+ */
 #include	"unp.h"
 
 int
